@@ -13,8 +13,8 @@ const MovieSearch = ({ onSearch }) => {
   }, [query]);
 
   useEffect(() => {
-    onSearch(debouncedQuery.toLowerCase());
-  }, [debouncedQuery, onSearch]);
+  onSearch((debouncedQuery || "").toLowerCase());
+}, [debouncedQuery, onSearch]);
 
   return (
     <input
